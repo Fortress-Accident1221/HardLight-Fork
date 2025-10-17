@@ -48,6 +48,7 @@
       - map: [ "enum.HumanoidVisualLayers.RLeg" ]
       - map: [ "enum.HumanoidVisualLayers.LLeg" ]
       - map: [ "accessory1" ]
+      - map: [ "enum.HumanoidVisualLayers.Genital" ]
       - map: [ "accessory2" ]
       - map: [ "jumpsuit" ]
       - map: [ "enum.HumanoidVisualLayers.LHand" ]
