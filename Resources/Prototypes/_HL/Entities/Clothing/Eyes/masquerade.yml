@@ -9,7 +9,7 @@
   - type: Clothing
     sprite: _HL/Clothing/Eyes/masquerade.rsi
   - type: VoiceOverride
-    nameOverride: Unknown
+    nameOverride: ""
     speechVerbOverride: Default
   - type: IdentityBlocker
   - type: Tag
