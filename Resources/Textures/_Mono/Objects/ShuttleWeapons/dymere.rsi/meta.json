@@ -7,8 +7,8 @@
         "y": 96
     },
     "states": [
-        {
-            "name": "space_artillery",
-        }
-    ]
+    {
+      "name": "space_artillery"
+    }
+  ]
 }
