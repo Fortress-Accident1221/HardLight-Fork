@@ -50,8 +50,6 @@
     - map: [ "eyes" ]
     - map: [ "belt" ]
     - map: [ "back" ]
-    - map: [ "enum.HumanoidVisualLayers.UndershirtOverclothes" ]
-    - map: [ "enum.HumanoidVisualLayers.TailOversuit" ]
     - map: [ "neck" ]
     - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
     - map: [ "enum.HumanoidVisualLayers.Hair" ]
