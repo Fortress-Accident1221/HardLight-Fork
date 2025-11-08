@@ -114,17 +114,36 @@ marking-GenitalVaginaSpade-vagina_spade_1_0_FRONT = Color
 marking-GenitalVaginaSpade = Vagina, Spade
 
 # Round breasts
+marking-GenitalBreastsRoundA-breasts_pairround_a_0_FRONT = Color
+marking-GenitalBreastsRoundA = A-Cup Breasts, Round
+
+marking-GenitalBreastsRoundB-breasts_pairround_b_0_FRONT = Color
+marking-GenitalBreastsRoundB = B-Cup Breasts, Round
+
+marking-GenitalBreastsRoundC-breasts_pairround_c_0_FRONT = Color
+marking-GenitalBreastsRoundC = C-Cup Breasts, Round
+
+marking-GenitalBreastsRoundD-breasts_pairround_d_0_FRONT = Color
+marking-GenitalBreastsRoundD = D-Cup Breasts, Round
+
+marking-GenitalBreastsRoundE-breasts_pairround_e_0_FRONT = Color
+marking-GenitalBreastsRoundE = E-Cup Breasts, Round
+
+marking-GenitalBreastsRoundF-breasts_pairround_f_0_FRONT = Color
+marking-GenitalBreastsRoundF = F-Cup Breasts, Round
+
+# Pair breasts
 marking-GenitalBreastsPairA-breasts_pair_a_0_FRONT = Color
-marking-GenitalBreastsPairA = A-Cup Breasts, Round
+marking-GenitalBreastsPairA = A-Cup Breasts, Pair
 
 marking-GenitalBreastsPairB-breasts_pair_b_0_FRONT = Color
-marking-GenitalBreastsPairB = B-Cup Breasts, Round
+marking-GenitalBreastsPairB = B-Cup Breasts, Pair
 
 marking-GenitalBreastsPairC-breasts_pair_c_0_FRONT = Color
-marking-GenitalBreastsPairC = C-Cup Breasts, Round
+marking-GenitalBreastsPairC = C-Cup Breasts, Pair
 
 marking-GenitalBreastsPairD-breasts_pair_d_0_FRONT = Color
-marking-GenitalBreastsPairD = D-Cup Breasts, Round
+marking-GenitalBreastsPairD = D-Cup Breasts, Pair
 
 # Quad breasts
 marking-GenitalBreastsQuadA-breasts_quad_a_0_FRONT = Color
