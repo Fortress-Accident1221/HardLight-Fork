@@ -18,6 +18,7 @@
   startingGear: QuartermasterGear
   icon: "JobIconQuarterMaster"
   supervisors: job-supervisors-captain
+  requireAdminNotify: true
   canBeAntag: false
   access:
   - Cargo

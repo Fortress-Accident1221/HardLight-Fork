@@ -21,6 +21,7 @@
   icon: "JobIconHeadOfSecurity"
   supervisors: job-supervisors-captain
   canBeAntag: false
+  requireAdminNotify: true
   ## Frontier: commented out stuff below
   access:
   - HeadOfSecurity

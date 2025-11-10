@@ -19,6 +19,7 @@
   icon: "JobIconChiefEngineer"
   supervisors: job-supervisors-captain
   canBeAntag: false
+  requireAdminNotify: true
   ## Frontier: commented everything below out
   access:
   - Maintenance

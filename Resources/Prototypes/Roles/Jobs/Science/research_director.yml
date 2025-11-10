@@ -16,6 +16,7 @@
   icon: "JobIconResearchDirector"
   supervisors: job-supervisors-captain
   canBeAntag: false
+  requireAdminNotify: true
   ## Frontier: commented stuff below out
   access:
   - Research
