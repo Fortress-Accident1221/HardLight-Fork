@@ -293,8 +293,12 @@ public sealed partial class FireControlSystem : EntitySystem
                     if (diff.LengthSquared() > 0.01f)
                     {
                         // Rotate towards target
+                        // Get the world rotation needed to face the target
                         var goalAngle = Angle.FromWorldVec(diff);
-                        _xform.SetLocalRotation(localWeapon, goalAngle, weaponXform);
+                        // Convert to local rotation by removing parent rotation
+                        var parentRotation = _xform.GetWorldRotation(weaponXform.ParentUid);
+                        var localRotation = goalAngle - parentRotation;
+                        _xform.SetLocalRotation(localWeapon, localRotation, weaponXform);
                     }
                 }
             }
@@ -407,14 +411,14 @@ public sealed partial class FireControlSystem : EntitySystem
         // Initialize ray collision
         var ray = new CollisionRay(weaponPos, direction, collisionMask: (int)(CollisionGroup.Opaque | CollisionGroup.Impassable));
 
-        // Create a predicate that ignores entities not on the same grid
-        bool IgnoreEntityNotOnSameGrid(EntityUid entity, EntityUid sourceWeapon)
+        // Create a predicate that only checks entities on the same grid
+        bool CheckOnlyEntitiesOnSameGrid(EntityUid entity, EntityUid sourceWeapon)
         {
             // Always ignore the source weapon itself
             if (entity == sourceWeapon)
                 return true;
 
-            // If the weapon isn't on a grid, we'll check against all entities
+            // If the weapon isn't on a grid, check all entities (don't ignore any)
             if (weaponGridUid == null)
                 return false;
 
@@ -422,21 +426,21 @@ public sealed partial class FireControlSystem : EntitySystem
             var entityTransform = Transform(entity);
             var entityGridUid = entityTransform.GridUid;
 
-            // Ignore if not on the same grid
+            // Ignore entities NOT on the same grid (we only want to check obstacles on our own grid)
             return entityGridUid != weaponGridUid;
         }
 
-        // Check if there's any obstacles in the firing direction, only considering entities on the same grid
+        // Check if there's any obstacles in the firing direction on the same grid
         var raycastResults = _physics.IntersectRayWithPredicate(
             mapId,
             ray,
             weapon,
-            IgnoreEntityNotOnSameGrid,
+            CheckOnlyEntitiesOnSameGrid,
             distance,
-            returnOnFirstHit: false
+            returnOnFirstHit: true // Stop at first hit for efficiency
         ).ToList();
 
-        // Can only fire if there's no obstacles in the path
+        // Can only fire if there's no obstacles in the path on our own grid
         return raycastResults.Count == 0;
     }
 
@@ -456,14 +460,14 @@ public sealed partial class FireControlSystem : EntitySystem
         var mapId = transform.MapID;
         var weaponGridUid = transform.GridUid;
 
-        // Create a predicate that ignores entities not on the same grid
-        bool IgnoreEntityNotOnSameGrid(EntityUid entity, EntityUid sourceWeapon)
+        // Create a predicate that only checks entities on the same grid
+        bool CheckOnlyEntitiesOnSameGrid(EntityUid entity, EntityUid sourceWeapon)
         {
             // Always ignore the source weapon itself
             if (entity == sourceWeapon)
                 return true;
 
-            // If the weapon isn't on a grid, we'll check against all entities
+            // If the weapon isn't on a grid, check all entities (don't ignore any)
             if (weaponGridUid == null)
                 return false;
 
@@ -471,7 +475,7 @@ public sealed partial class FireControlSystem : EntitySystem
             var entityTransform = Transform(entity);
             var entityGridUid = entityTransform.GridUid;
 
-            // Ignore if not on the same grid
+            // Ignore entities NOT on the same grid (we only want to check obstacles on our own grid)
             return entityGridUid != weaponGridUid;
         }
 
@@ -485,17 +489,17 @@ public sealed partial class FireControlSystem : EntitySystem
             // Initialize ray collision
             var ray = new CollisionRay(position, direction, collisionMask: (int)(CollisionGroup.Opaque | CollisionGroup.Impassable));
 
-            // Check if there's any obstacles in this direction, only considering entities on the same grid
+            // Check if there's any obstacles in this direction on the same grid
             var raycastResults = _physics.IntersectRayWithPredicate(
                 mapId,
                 ray,
                 weapon,
-                IgnoreEntityNotOnSameGrid,
+                CheckOnlyEntitiesOnSameGrid,
                 maxDistance,
-                returnOnFirstHit: false
+                returnOnFirstHit: true // Stop at first hit for efficiency
             ).ToList();
 
-            // Direction is clear if there are no obstacles
+            // Direction is clear if there are no obstacles on our own grid
             var canFire = raycastResults.Count == 0;
             directions[angle * 180 / MathF.PI] = canFire;
         }
