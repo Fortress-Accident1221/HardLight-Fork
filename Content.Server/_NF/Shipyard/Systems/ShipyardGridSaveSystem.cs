@@ -1,6 +1,7 @@
 using Content.Server._NF.Shipyard.Components;
 using Content.Shared._NF.Shipyard.Components;
 using Content.Shared._NF.Shipyard.Events;
+using Content.Shared.DeviceLinking.Components;
 using Content.Shared.Shuttles.Save; // For SendShipSaveDataClientMessage
 using Content.Server.Maps;
 using Content.Server.Atmos.Components;
@@ -452,8 +453,11 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
             return false; // preserve stash root outright
         if (_entityManager.HasComponent<MapGridComponent>(uid))
             return false; // never delete grid root or nested grids here
-        // Preserve wall-mounted fixtures (buttons, levers, posters, etc.) regardless of anchored state
+        // Preserve wall-mounted fixtures (buttons, posters, etc.) regardless of anchored state
         if (_entityManager.HasComponent<WallMountComponent>(uid))
+            return false;
+        // Preserve levers
+        if (_entityManager.HasComponent<TwoWayLeverComponent>(uid))
             return false;
         // Preserve entities with static body types, such as drains or sinks.
         if (_entityManager.TryGetComponent<PhysicsComponent>(uid, out var physics) && physics.BodyType == BodyType.Static)
