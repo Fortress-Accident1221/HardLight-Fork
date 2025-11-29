@@ -1308,7 +1308,6 @@
   components:
     - type: Sprite
       sprite: Mobs/Aliens/Xenos/parasite.rsi
-      
 - type: entity
   name: Lurker
   id: MobXenoLurker
