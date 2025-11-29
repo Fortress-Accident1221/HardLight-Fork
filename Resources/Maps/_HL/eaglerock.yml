@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 11/29/2025 03:42:30
-  entityCount: 21053
+  time: 11/29/2025 03:57:09
+  entityCount: 21049
 maps:
 - 1
 grids:
@@ -552,6 +552,11 @@ entities:
             id: BrickBoxOverlay
           decals:
             493: 34,9
+        - node:
+            color: '#951710FF'
+            id: BrickBoxOverlay
+          decals:
+            2118: 29,4
         - node:
             color: '#96DAFFFF'
             id: BrickBoxOverlay
@@ -1721,11 +1726,11 @@ entities:
           decals:
             651: 40,11
         - node:
-            color: '#00FFFBFF'
+            color: '#00BFBCFF'
             id: BrickTileWhiteLineE
           decals:
-            1346: 17,38
-            1347: 17,35
+            2122: 17,36
+            2123: 17,38
         - node:
             color: '#334E6DC8'
             id: BrickTileWhiteLineE
@@ -1742,8 +1747,9 @@ entities:
             168: -3,-3
             169: 5,-3
             170: 3,-3
-            1367: 17,37
             1577: -13,51
+            2119: 17,35
+            2121: 17,37
         - node:
             color: '#37789BFF'
             id: BrickTileWhiteLineE
@@ -1777,11 +1783,6 @@ entities:
             id: BrickTileWhiteLineE
           decals:
             544: 38,1
-        - node:
-            color: '#52B4E996'
-            id: BrickTileWhiteLineE
-          decals:
-            1394: 17,36
         - node:
             color: '#52B4E9FF'
             id: BrickTileWhiteLineE
@@ -7870,7 +7871,7 @@ entities:
       pos: -21.5,45.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -19449.018
+      secondsUntilStateChange: -19699.635
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -8621,7 +8622,7 @@ entities:
       pos: -23.5,-12.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -105763.47
+      secondsUntilStateChange: -106014.086
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -8633,7 +8634,7 @@ entities:
       pos: -23.5,-13.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -105953.87
+      secondsUntilStateChange: -106204.484
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -8666,7 +8667,7 @@ entities:
       pos: -23.5,-1.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -97592.52
+      secondsUntilStateChange: -97843.14
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -8751,7 +8752,7 @@ entities:
       pos: 21.5,-13.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -86982.97
+      secondsUntilStateChange: -87233.586
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -8797,7 +8798,7 @@ entities:
       pos: 23.5,-5.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -56953.676
+      secondsUntilStateChange: -57204.293
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -9031,7 +9032,7 @@ entities:
       pos: 20.5,17.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -56501.61
+      secondsUntilStateChange: -56752.227
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -9772,7 +9773,7 @@ entities:
       pos: -23.5,39.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -13926.756
+      secondsUntilStateChange: -14177.372
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -45105,13 +45106,6 @@ entities:
     - type: Transform
       pos: -11.309144,-18.534351
       parent: 2
-- proto: ClothingNeckBling
-  entities:
-  - uid: 5742
-    components:
-    - type: Transform
-      pos: 29.816116,4.8909626
-      parent: 2
 - proto: ClothingNeckScarfStripedZebra
   entities:
   - uid: 1627
@@ -46584,15 +46578,6 @@ entities:
     - type: Transform
       pos: -42.5,-16.5
       parent: 2
-- proto: CrateFunLizardPlushieBulk
-  entities:
-  - uid: 5806
-    components:
-    - type: MetaData
-      desc: A buncha soft lizard plushies. Throw them around and then wonder how you're gonna explain this purchase to CC.
-    - type: Transform
-      pos: 25.5,7.5
-      parent: 2
 - proto: CrateFunParamedBike
   entities:
   - uid: 18840
@@ -46707,10 +46692,10 @@ entities:
       parent: 2
 - proto: CrewMonitoringServer
   entities:
-  - uid: 14233
+  - uid: 5806
     components:
     - type: Transform
-      pos: 18.5,36.5
+      pos: 18.5,35.5
       parent: 2
 - proto: CryogenicSleepUnit
   entities:
@@ -56805,10 +56790,10 @@ entities:
       canCollide: False
 - proto: EncryptionKeyNfsd
   entities:
-  - uid: 12244
+  - uid: 5741
     components:
     - type: Transform
-      parent: 12242
+      parent: 5740
     - type: Physics
       canCollide: False
 - proto: EncryptionKeyScience
@@ -56821,10 +56806,10 @@ entities:
       canCollide: False
 - proto: EncryptionKeySecurity
   entities:
-  - uid: 12243
+  - uid: 5742
     components:
     - type: Transform
-      parent: 12242
+      parent: 5740
     - type: Physics
       canCollide: False
 - proto: EncryptionKeyService
@@ -104386,13 +104371,6 @@ entities:
       parent: 2
     missingComponents:
     - InnatePsionicPowers
-- proto: GoldRing
-  entities:
-  - uid: 5740
-    components:
-    - type: Transform
-      pos: 29.206741,4.8909626
-      parent: 2
 - proto: GravityGenerator
   entities:
   - uid: 12493
@@ -106718,10 +106696,10 @@ entities:
       parent: 2
 - proto: GunneryServerStation
   entities:
-  - uid: 20967
+  - uid: 12242
     components:
     - type: Transform
-      pos: 17.5,38.5
+      pos: 29.5,4.5
       parent: 2
     - type: Battery
       startingCharge: 0
@@ -108515,13 +108493,6 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -24.5,0.5
-      parent: 2
-- proto: IngotGold
-  entities:
-  - uid: 5741
-    components:
-    - type: Transform
-      pos: 29.409166,4.5184627
       parent: 2
 - proto: IngotSilver
   entities:
@@ -121085,6 +121056,23 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -32.5,9.5
       parent: 2
+- proto: ShieldGeneratorPOI
+  entities:
+  - uid: 5739
+    components:
+    - type: Transform
+      pos: 25.5,7.5
+      parent: 2
+    - type: ContainerContainer
+      containers:
+        machine_board: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        machine_parts: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
 - proto: Shovel
   entities:
   - uid: 5275
@@ -127963,12 +127951,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 7.5,-0.5
       parent: 2
-  - uid: 5739
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 29.5,4.5
-      parent: 2
   - uid: 5805
     components:
     - type: Transform
@@ -128664,6 +128646,27 @@ entities:
       color: '#FF3300FF'
 - proto: TelecomServer
   entities:
+  - uid: 5740
+    components:
+    - type: Transform
+      pos: 18.5,36.5
+      parent: 2
+    - type: ContainerContainer
+      containers:
+        key_slots: !type:Container
+          showEnts: False
+          occludes: True
+          ents:
+          - 5741
+          - 5742
+        machine_board: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        machine_parts: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
   - uid: 5743
     components:
     - type: Transform
@@ -128676,27 +128679,6 @@ entities:
           occludes: True
           ents:
           - 5744
-        machine_board: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        machine_parts: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-  - uid: 12242
-    components:
-    - type: Transform
-      pos: 18.5,35.5
-      parent: 2
-    - type: ContainerContainer
-      containers:
-        key_slots: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 12243
-          - 12244
         machine_board: !type:Container
           showEnts: False
           occludes: True
@@ -134876,6 +134858,11 @@ entities:
       rot: 3.141592653589793 rad
       pos: 16.5,34.5
       parent: 2
+  - uid: 12243
+    components:
+    - type: Transform
+      pos: -12.5,57.5
+      parent: 2
   - uid: 12371
     components:
     - type: Transform
@@ -137618,12 +137605,6 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -15.5,57.5
-      parent: 2
-  - uid: 17095
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -12.5,57.5
       parent: 2
   - uid: 17185
     components:
