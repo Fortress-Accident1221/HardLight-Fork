@@ -145,6 +145,7 @@
 
 
 - type: entity
+  save: false
   parent: BaseSpeciesDummy
   id: MobThavenDummy
   categories: [ HideSpawnMenu ]
@@ -152,6 +153,7 @@
   - type: Sprite
     scale: 1, 1
   - type: Inventory
+    templateId: thaven
     speciesId: thaven
     displacements:
       jumpsuit:
