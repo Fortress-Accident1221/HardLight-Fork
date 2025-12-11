@@ -4,7 +4,7 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 12/11/2025 01:34:39
+  time: 12/11/2025 21:55:31
   entityCount: 1929
 maps: []
 grids:
@@ -256,6 +256,29 @@ entities:
             421: -14,19
             422: -14,20
             424: -18,19
+        - node:
+            color: '#C85353FF'
+            id: BrickTileDarkEndN
+          decals:
+            448: -10,21
+            451: 10,21
+        - node:
+            color: '#C85353FF'
+            id: BrickTileDarkEndS
+          decals:
+            449: -10,19
+            450: 10,19
+        - node:
+            color: '#C85353FF'
+            id: BrickTileDarkLineE
+          decals:
+            454: 10,20
+        - node:
+            color: '#C85353FF'
+            id: BrickTileDarkLineW
+          decals:
+            452: -10,20
+            453: 10,20
         - node:
             color: '#00403FFF'
             id: BrickTileWhiteCornerNe
@@ -13015,6 +13038,20 @@ entities:
     - type: Transform
       pos: 0.5,7.5
       parent: 1
+- proto: WeaponLaserTurretApollo
+  entities:
+  - uid: 352
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 16.5,19.5
+      parent: 1
+  - uid: 353
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -15.5,19.5
+      parent: 1
 - proto: WeaponTurretASM501
   entities:
   - uid: 4
@@ -13029,61 +13066,19 @@ entities:
       rot: 3.141592653589793 rad
       pos: 12.5,21.5
       parent: 1
-- proto: WeaponTurretDymere
-  entities:
-  - uid: 352
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -16.5,19.5
-      parent: 1
-    - type: ContainerContainer
-      containers:
-        ballistic-ammo: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        machine_board: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        machine_parts: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-  - uid: 353
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 17.5,19.5
-      parent: 1
-    - type: ContainerContainer
-      containers:
-        ballistic-ammo: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        machine_board: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        machine_parts: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-- proto: WeaponTurretHades
+- proto: WeaponTurretKargil
   entities:
   - uid: 15
     components:
     - type: Transform
       rot: 3.141592653589793 rad
-      pos: -14.5,19.5
+      pos: -9.5,20.5
       parent: 1
   - uid: 349
     components:
     - type: Transform
       rot: 3.141592653589793 rad
-      pos: 15.5,19.5
+      pos: 10.5,20.5
       parent: 1
 - proto: WeaponTurretRAC30
   entities:
