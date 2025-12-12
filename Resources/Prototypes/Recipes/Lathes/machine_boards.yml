@@ -185,16 +185,14 @@
   result: ElectrolysisUnitMachineCircuitboard
 
 - type: latheRecipe
-  abstract: true # DeltaV
-  parent: BaseGoldCircuitboardRecipe
-  id: AutolatheHyperConvectionMachineCircuitboard
-  result: AutolatheHyperConvectionMachineCircuitboard
+  parent: [ BaseCircuitboardRecipe, BaseMedicalMachineRecipeCategory ]
+  id: CentrifugeMachineCircuitboard
+  result: CentrifugeMachineCircuitboard
 
 - type: latheRecipe
-  abstract: true # DeltaV
-  parent: BaseGoldCircuitboardRecipe
-  id: ProtolatheHyperConvectionMachineCircuitboard
-  result: ProtolatheHyperConvectionMachineCircuitboard
+  parent: [ BaseGoldCircuitboardRecipe, BaseMedicalMachineRecipeCategory ]
+  id: ChemMasterMachineCircuitboard
+  result: ChemMasterMachineCircuitboard
 
 - type: latheRecipe
   parent: [ BaseGoldCircuitboardRecipe, BaseMedicalMachineRecipeCategory ]
@@ -202,11 +200,11 @@
   result: ChemDispenserMachineCircuitboard
 
 # Treatment
+
 - type: latheRecipe
-  abstract: true # DeltaV
-  parent: BaseGoldCircuitboardRecipe
-  id: CircuitImprinterHyperConvectionMachineCircuitboard
-  result: CircuitImprinterHyperConvectionMachineCircuitboard
+  parent: [ BaseGoldCircuitboardRecipe, BaseMedicalMachineRecipeCategory ]
+  id: CryoPodMachineCircuitboard
+  result: CryoPodMachineCircuitboard
 
 - type: latheRecipe
   parent: [ BaseGoldCircuitboardRecipe, BaseMedicalMachineRecipeCategory ]
@@ -399,6 +397,24 @@
   parent: [ BaseGoldCircuitboardRecipe, BaseResearchMachineRecipeCategory ]
   id: CircuitImprinterHyperConvectionMachineCircuitboard
   result: CircuitImprinterHyperConvectionMachineCircuitboard
+
+# - type: latheRecipe
+#   abstract: true # DeltaV
+#   parent: BaseGoldCircuitboardRecipe
+#   id: AutolatheHyperConvectionMachineCircuitboard
+#   result: AutolatheHyperConvectionMachineCircuitboard
+
+# - type: latheRecipe
+#   abstract: true # DeltaV
+#   parent: BaseGoldCircuitboardRecipe
+#   id: ProtolatheHyperConvectionMachineCircuitboard
+#   result: ProtolatheHyperConvectionMachineCircuitboard
+
+# - type: latheRecipe
+#   abstract: true # DeltaV
+#   parent: BaseGoldCircuitboardRecipe
+#   id: CircuitImprinterHyperConvectionMachineCircuitboard
+#   result: CircuitImprinterHyperConvectionMachineCircuitboard
 
 - type: latheRecipe
   parent: [ BaseCircuitboardRecipe, BaseResearchMachineRecipeCategory ]
