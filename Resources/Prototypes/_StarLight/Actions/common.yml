@@ -1,11 +1,12 @@
-- type: instantAction
+- type: entity
   id: NullPhaseAction
   name: Phase Shift
   description: Shift yourself out of alignment with realspace to travel quickly to different areas.
-  useDelay: 1
-  icon:
-    sprite: _Starlight/Interface/Actions/shadekin.rsi
-    state: phase
-  itemIconStyle: BigItem
-  checkCanInteract: false
-  event: !type:NullPhaseActionEvent
+  categories: [HideSpawnMenu]
+  components:
+    - type: InstantAction
+      useDelay: 1
+      icon:
+        sprite: _Starlight/Interface/Actions/shadekin.rsi
+        state: phase
+      event: !type:NullPhaseActionEvent
