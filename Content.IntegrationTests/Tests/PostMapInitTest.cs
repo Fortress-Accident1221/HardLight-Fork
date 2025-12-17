@@ -285,7 +285,8 @@ namespace Content.IntegrationTests.Tests
                 return;
 
             var yamlEntities = node["entities"];
-            if (!protoManager.TryIndex<EntityCategoryPrototype>("DoNotMap", out var dnmCategory))
+            private static readonly ProtoId<EntityCategoryPrototype> DoNotMapCategoryId = "DoNotMap";
+            if (!protoManager.TryIndex<EntityCategoryPrototype>(DoNotMapCategoryId, out var dnmCategory))
                 return;
 
             Assert.Multiple(() =>

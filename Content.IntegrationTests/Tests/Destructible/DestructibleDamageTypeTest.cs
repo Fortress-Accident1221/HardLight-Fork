@@ -49,8 +49,10 @@ namespace Content.IntegrationTests.Tests.Destructible
 
             await server.WaitAssertion(() =>
             {
-                var bluntDamageType = protoManager.Index<DamageTypePrototype>("TestBlunt");
-                var slashDamageType = protoManager.Index<DamageTypePrototype>("TestSlash");
+                private static readonly ProtoId<DamageTypePrototype> TestBluntId = "TestBlunt";
+                private static readonly ProtoId<DamageTypePrototype> TestSlashId = "TestSlash";
+                var bluntDamageType = protoManager.Index<DamageTypePrototype>(TestBluntId);
+                var slashDamageType = protoManager.Index<DamageTypePrototype>(TestSlashId);
 
                 var bluntDamage = new DamageSpecifier(bluntDamageType, 5);
                 var slashDamage = new DamageSpecifier(slashDamageType, 5);

@@ -39,7 +39,8 @@ namespace Content.IntegrationTests.Tests.Destructible
             await server.WaitAssertion(() =>
             {
                 var coordinates = sEntityManager.GetComponent<TransformComponent>(sDestructibleEntity).Coordinates;
-                var bruteDamageGroup = sPrototypeManager.Index<DamageGroupPrototype>("TestBrute");
+                private static readonly ProtoId<DamageGroupPrototype> TestBruteId = "TestBrute";
+                var bruteDamageGroup = sPrototypeManager.Index<DamageGroupPrototype>(TestBruteId);
                 DamageSpecifier bruteDamage = new(bruteDamageGroup, 50);
 
 #pragma warning disable NUnit2045 // Interdependent assertions.
