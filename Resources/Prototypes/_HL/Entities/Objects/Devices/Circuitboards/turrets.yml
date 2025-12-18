@@ -10,9 +10,9 @@
       state: security
     - type: MachineBoard
       stackRequirements:
-        LightShipWeaponFrame: 1
+        LightShipWeaponFrame: 2
         LightShipWeaponServo: 2
-        LightShipWeaponInternal: 2
+        LightShipWeaponInternal: 1
     - type: Tag
       tags:
       - UnFlatpackable
@@ -27,9 +27,9 @@
       state: security
     - type: MachineBoard
       stackRequirements:
-        MediumShipWeaponFrame: 1
+        MediumShipWeaponFrame: 2
         MediumShipWeaponServo: 2
-        MediumShipWeaponInternal: 2
+        MediumShipWeaponInternal: 1
     - type: Tag
       tags:
       - UnFlatpackable
@@ -44,9 +44,9 @@
       state: security
     - type: MachineBoard
       stackRequirements:
-        HeavyShipWeaponFrame: 1
+        HeavyShipWeaponFrame: 2
         HeavyShipWeaponServo: 2
-        HeavyShipWeaponInternal: 2
+        HeavyShipWeaponInternal: 1
     - type: Tag
       tags:
       - UnFlatpackable
@@ -61,9 +61,9 @@
       state: security
     - type: MachineBoard
       stackRequirements:
-        CapitalShipWeaponFrame: 1
+        CapitalShipWeaponFrame: 2
         CapitalShipWeaponServo: 2
-        CapitalShipWeaponInternal: 2
+        CapitalShipWeaponInternal: 1
     - type: Tag
       tags:
       - UnFlatpackable
@@ -79,9 +79,9 @@
     state: security
   - type: MachineBoard
     stackRequirements:
-      LightShipWeaponFrame: 1
+      LightShipWeaponFrame: 2
       LightShipWeaponServo: 2
-      LightShipWeaponInternal: 2
+      LightShipWeaponInternal: 1
   - type: Tag
     tags:
     - UnFlatpackable
@@ -96,9 +96,9 @@
     state: security
   - type: MachineBoard
     stackRequirements:
-      MediumShipWeaponFrame: 1
+      MediumShipWeaponFrame: 2
       MediumShipWeaponServo: 2
-      MediumShipWeaponInternal: 2
+      MediumShipWeaponInternal: 1
   - type: Tag
     tags:
     - UnFlatpackable
@@ -113,9 +113,9 @@
     state: security
   - type: MachineBoard
     stackRequirements:
-      HeavyShipWeaponFrame: 1
+      HeavyShipWeaponFrame: 2
       HeavyShipWeaponServo: 2
-      HeavyShipWeaponInternal: 2
+      HeavyShipWeaponInternal: 1
   - type: Tag
     tags:
     - UnFlatpackable
@@ -130,9 +130,9 @@
     state: security
   - type: MachineBoard
     stackRequirements:
-      CapitalShipWeaponFrame: 1
+      CapitalShipWeaponFrame: 2
       CapitalShipWeaponServo: 2
-      CapitalShipWeaponInternal: 2
+      CapitalShipWeaponInternal: 1
   - type: Tag
     tags:
     - UnFlatpackable
@@ -352,16 +352,18 @@
 ### shields
 - type: entity
   id: LightShieldBoard
-  parent: BaseLightShipWeaponBoard
+  parent: BaseCivLightShipWeaponBoard
   name: MS-100 "Sentinel" Shield Generator board
+  description: A machine printed circuit board for a specific ship shield.
   components:
   - type: MachineBoard
     prototype: ShieldGeneratorSmall
 
 - type: entity
   id: MediumShieldBoard
-  parent: BaseMediumShipWeaponBoard
+  parent: BaseCivMediumShipWeaponBoard
   name: MS-250 "Aegis" Shield Generator board
+  description: A machine printed circuit board for a specific ship shield.
   components:
   - type: MachineBoard
     prototype: ShieldGeneratorMedium
@@ -370,6 +372,7 @@
   id: HeavyShieldBoard
   parent: BaseHeavyShipWeaponBoard
   name: MS-500 "Titan" Shield Generator board
+  description: A machine printed circuit board for a specific ship shield.
   components:
   - type: MachineBoard
     prototype: ShieldGenerator
@@ -378,6 +381,7 @@
   id: CapitalShieldBoard
   parent: BaseCapitalShipWeaponBoard
   name: FS-421 "Fortress" Outpost Shield Generator board
+  description: A machine printed circuit board for a specific ship shield.
   components:
   - type: MachineBoard
     prototype: ShieldGeneratorPOI
@@ -530,3 +534,13 @@
   components:
   - type: MachineBoard
     prototype: CVWeaponLaserTurretHarbringer
+
+### Other
+- type: entity
+  id: CivBigThrusterBoard
+  parent: BaseCivMediumShipWeaponBoard
+  name: Civilian Large thruster board
+  description: A machine printed circuit board for a large thruster. Make sure to place the machine frame in the bottom right corner of a 2x2, with the arrow facing in the opposite direction you want the nozzle to face.
+  components:
+  - type: MachineBoard
+    prototype: ThrusterLarge
