@@ -26,6 +26,12 @@ A grid is considered "orphaned" and will be deleted if ALL of the following cond
 2. **Content Check**: The grid contains no "important" entities
 3. **Age Check** (for periodic cleanup): The grid has existed for longer than the minimum age (default: 30 seconds)
 
+### Special Cases
+
+The following grid types receive special handling:
+
+- **Dungeon Atlas Templates**: Grids with `DungeonAtlasTemplateComponent` are pre-loaded dungeon templates that should be cleaned up if they persist with few tiles. These are normally deleted on round start but may sometimes remain.
+
 ### Important Entities
 
 The following types of entities are considered important and will prevent grid deletion:

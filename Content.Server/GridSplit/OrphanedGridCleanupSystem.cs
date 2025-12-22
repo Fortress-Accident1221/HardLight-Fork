@@ -1,5 +1,6 @@
 using System.Linq;
 using Content.Server.Power.Components;
+using Content.Server.Procedural;
 using Content.Server.Station.Components;
 using Content.Shared.CCVar;
 using Content.Shared.Doors.Components;
@@ -116,7 +117,8 @@ public sealed class OrphanedGridCleanupSystem : EntitySystem
     /// <summary>
     /// Periodically scans for and cleans up empty/nameless grids.
     /// </summary>
-    private void CleanupEmptyGrids(TimeSpan curTime)
+    /// <returns>The number of grids queued for deletion.</returns>
+    private int CleanupEmptyGrids(TimeSpan curTime)
     {
         var gridsToDelete = new List<EntityUid>();
 
@@ -153,6 +155,8 @@ public sealed class OrphanedGridCleanupSystem : EntitySystem
         {
             Log.Info($"Periodic empty grid cleanup deleted {gridsToDelete.Count} grid(s)");
         }
+
+        return gridsToDelete.Count;
     }
 
     /// <summary>
@@ -171,6 +175,16 @@ public sealed class OrphanedGridCleanupSystem : EntitySystem
                 return false;
 
             return true;
+        }
+
+        // Check for dungeon atlas template grids - these are pre-loaded templates
+        // that should be cleaned up if they're empty or have no tiles
+        // They're supposed to be deleted on round start but sometimes persist
+        if (HasComp<DungeonAtlasTemplateComponent>(gridUid))
+        {
+            // Dungeon templates with few tiles and no important entities should be cleaned up
+            if (tileCount < _minimumTileCount && !HasImportantEntities(gridUid))
+                return true;
         }
 
         // Check for blank/empty name combined with small size
@@ -237,6 +251,8 @@ public sealed class OrphanedGridCleanupSystem : EntitySystem
         var xformQuery = GetEntityQuery<TransformComponent>();
 
         // Get all entities on the grid
+        // Use TryGetComponent for safety - if the grid is being deleted or lacks a transform,
+        // we treat it as having no important entities (safe to delete)
         if (!xformQuery.TryGetComponent(gridUid, out var xform))
             return false;
 
@@ -320,10 +336,9 @@ public sealed class OrphanedGridCleanupSystem : EntitySystem
     /// <summary>
     /// Forces an immediate empty grid cleanup check.
     /// </summary>
+    /// <returns>The number of grids queued for deletion.</returns>
     public int ForceEmptyGridCleanup()
     {
-        var countBefore = _gridSpawnTimes.Count;
-        CleanupEmptyGrids(_timing.CurTime);
-        return countBefore - _gridSpawnTimes.Count;
+        return CleanupEmptyGrids(_timing.CurTime);
     }
 }
