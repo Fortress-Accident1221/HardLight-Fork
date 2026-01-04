@@ -185,3 +185,27 @@ Entries:
       message: Sensors to tracking implants
   id: 22
   time: '2026-01-04T04:34:22.0000000+00:00'
+- author: carccborg
+  changes:
+    - type: Add
+      message: New markings for Thaven! Arm, leg, and dorsal fins.
+    - type: Add
+      message: Three new tails for Thaven
+    - type: Add
+      message: Added Angler bulb and Fairy fin markings for Thaven.
+    - type: Add
+      message: truly funky sprites for the base thaven
+    - type: Add
+      message: truly funky sprites for many thaven markings
+    - type: Tweak
+      message: Increased the amount of slots for Thaven arm, leg and chest markings
+    - type: Tweak
+      message: existing thaven tails touched up
+    - type: Tweak
+      message: sharkminnow eyeliner is now light before the multiply layer
+    - type: Fix
+      message: fixed thaven neck, eye, ear, mask, and head offsets to be pixel perfect
+    - type: Fix
+      message: Item offsets now work properly on Thaven in the customization screen.
+  id: 23
+  time: '2026-01-04T20:13:15.0000000+00:00'
