@@ -263,3 +263,11 @@ Entries:
         with the mech itself.
   id: 28
   time: '2026-01-07T04:31:01.0000000+00:00'
+- author: Makeshift
+  changes:
+    - type: Tweak
+      message: >-
+        Reported a more recent version of Elkridge, with a more thorough set of
+        changes to fit Hardlight.
+  id: 29
+  time: '2026-01-07T04:41:20.0000000+00:00'
