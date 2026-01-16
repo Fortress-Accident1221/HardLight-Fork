@@ -475,3 +475,13 @@ Entries:
       message: Avali, Resomi, and Vow will now turn into fried chicken when ashed.
   id: 48
   time: '2026-01-16T20:25:45.0000000+00:00'
+- author: Generic_Eagle
+  changes:
+    - type: Add
+      message: >-
+        Eaglerock now has a genetics room in medical for geneticists to make
+        mutations
+    - type: Add
+      message: Eaglerock now has a Butlertron for the station chef
+  id: 49
+  time: '2026-01-16T20:49:45.0000000+00:00'
